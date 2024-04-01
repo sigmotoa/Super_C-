@@ -16,6 +16,8 @@ superMan.Volar = true;
 
 superMan.MostrarHeroe();
 
+
+
 class Heroe
 {
     public int Id;
@@ -31,6 +33,15 @@ class Heroe
                           $"\n{Nombre}" +
                           $"\n{IdentidadSecreta}" +
                           $"\n{Ciudad}" +
-                          $"\nVolar {Volar}");
+                          $"\nVolar {Volar}\nPoderes:");
+        ListaPoderes();
+    }
+
+    private void ListaPoderes()
+    {
+        for (int i = 0; i < Poderes.Length; i++)
+        {
+            Console.WriteLine($"\t{Poderes[i]}");
+        }
     }
 }

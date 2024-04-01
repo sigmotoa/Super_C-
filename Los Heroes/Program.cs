@@ -16,6 +16,24 @@ superMan.Volar = true;
 
 superMan.MostrarHeroe();
 
+var Fuerza = new Poder();
+Fuerza.Nombre = "Super Fuerza";
+Fuerza.Descripcion = "Fuerza muy fuerte";
+Fuerza.Nivel = NivelPoder.NivelDos;
+
+class Poder
+{
+    public string Nombre;
+    public string Descripcion;
+    public NivelPoder Nivel;
+}
+
+enum NivelPoder
+{
+    NivelUno,
+    NivelDos,
+    NivelTres
+}
 
 
 class Heroe

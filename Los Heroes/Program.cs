@@ -7,9 +7,10 @@ var flash = new Heroe("Flash", 2);
 
 superMan.Id = 1;
 superMan.Nombre = "SuperMan";
-superMan.IdentidadSecreta = "Clark Kent";
+superMan.IdentidadSecreta = "         Clark Kent     ";
 superMan.Ciudad = "Metropolis";
 superMan.Poderes = new List<Poder>();
+
 
 superMan.Volar = true;
 

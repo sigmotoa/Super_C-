@@ -1,7 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-var superMan = new Heroe();
+var superMan = new Heroe(nombre:"SuperMan",id:1);
+
 superMan.Id = 1;
 superMan.Nombre = "SuperMan";
 superMan.IdentidadSecreta = "Clark Kent";
@@ -9,6 +10,8 @@ superMan.Ciudad = "Metropolis";
 superMan.Poderes = new List<Poder>();
 
 superMan.Volar = true;
+
+var LeerMente = new Poder("Leer la mente");
 
 
 var Fuerza = new Poder();
@@ -23,13 +26,26 @@ Velocidad.Nivel = NivelPoder.NivelDos;
 
 superMan.Poderes.Add(Fuerza);
 superMan.Poderes.Add(Velocidad);
+superMan.Poderes.Add(LeerMente);
 
 superMan.MostrarHeroe();
 class Poder
 {
+    
     public string Nombre;
     public string Descripcion;
     public NivelPoder Nivel;
+
+    public Poder()
+    {
+        
+    }
+    
+    public Poder(string nombre)
+    {
+        Nombre = nombre;
+        Nivel = NivelPoder.NivelUno;
+    }
 }
 
 enum NivelPoder
@@ -49,6 +65,12 @@ class Heroe
     public List<Poder> Poderes;
     public bool Volar;
 
+    public Heroe(string nombre, int id)
+    {
+        Id = id;
+        Nombre = nombre;
+    }
+    
     public void MostrarHeroe()
     {
         Console.WriteLine($"{Id}" +

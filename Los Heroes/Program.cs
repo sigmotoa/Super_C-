@@ -4,12 +4,16 @@ using Los_Heroes.Models;
 
 var superMan = new Heroe(nombre:"SuperMan",id:1);
 var flash = new Heroe("Flash", 2);
+var doom = new Villano();
 
+doom.MostrarHeroe();
+    
 superMan.Id = 1;
 superMan.Nombre = "SuperMan";
 superMan.IdentidadSecreta = "         Clark Kent     ";
 superMan.Ciudad = "Metropolis";
 superMan.Poderes = new List<Poder>();
+
 
 
 superMan.Volar = true;

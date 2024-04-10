@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Los_Heroes.Models;
 
 var superMan = new Heroe(nombre:"SuperMan",id:1);
+var flash = new Heroe("Flash", 2);
 
 superMan.Id = 1;
 superMan.Nombre = "SuperMan";
@@ -29,26 +31,9 @@ superMan.Poderes.Add(Velocidad);
 superMan.Poderes.Add(LeerMente);
 
 superMan.MostrarHeroe();
-class Poder
-{
-    
-    public string Nombre;
-    public string Descripcion;
-    public NivelPoder Nivel;
+flash.MostrarHeroe();
 
-    public Poder()
-    {
-        
-    }
-    
-    public Poder(string nombre)
-    {
-        Nombre = nombre;
-        Nivel = NivelPoder.NivelUno;
-    }
-}
-
-enum NivelPoder
+public enum NivelPoder
 {
     NivelUno,
     NivelDos,
@@ -56,36 +41,3 @@ enum NivelPoder
 }
 
 
-class Heroe
-{
-    public int Id;
-    public string Nombre;
-    public string IdentidadSecreta;
-    public string Ciudad;
-    public List<Poder> Poderes;
-    public bool Volar;
-
-    public Heroe(string nombre, int id)
-    {
-        Id = id;
-        Nombre = nombre;
-    }
-    
-    public void MostrarHeroe()
-    {
-        Console.WriteLine($"{Id}" +
-                          $"\n{Nombre}" +
-                          $"\n{IdentidadSecreta}" +
-                          $"\n{Ciudad}" +
-                          $"\nVolar {Volar}\nPoderes:");
-        ListaPoderes();
-    }
-
-    private void ListaPoderes()
-    {
-        foreach (var unPoder in Poderes)
-        {
-            Console.WriteLine($"\t{unPoder.Nombre}");
-        }
-    }
-}

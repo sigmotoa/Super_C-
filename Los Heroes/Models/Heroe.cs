@@ -4,13 +4,17 @@ public class Heroe
 {
     public int Id;
     public string Nombre;
+    
+    private string _IdentidadSecreta;
+    public string IdentidadSecreta
+    {
+        get => _IdentidadSecreta;
+        set => value.Trim();
+    }
 
-   // private string _IdentidadSecreta{
-     //   get { return _IdentidadSecreta; }
-       // set { _IdentidadSecreta = IdentidadSecreta.Trim(); }
-    //}
-    public string IdentidadSecreta;
     public string Ciudad;
+    
+
     public List<Poder> Poderes;
     public bool Volar;
 
@@ -30,7 +34,7 @@ public class Heroe
     {
         Console.WriteLine($"{Id}" +
                           $"\n{Nombre}" +
-                          $"\n{IdentidadSecreta}" +
+                          $"\n{_IdentidadSecreta}" +
                           $"\n{Ciudad}" +
                           $"\nVolar {Volar}\nPoderes:");
         ListaPoderes();
